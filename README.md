@@ -32,7 +32,7 @@ A modern, high-performance personal portfolio website built with Next.js 16, Typ
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:ketutardika/portfolio.git
 cd portfolio
 ```
 
