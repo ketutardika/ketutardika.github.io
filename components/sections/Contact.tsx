@@ -18,7 +18,7 @@ export default function Contact() {
 
           <div className="flex justify-center gap-6">
             <a
-              href="https://instagram.com/yourusername"
+              href="https://instagram.com/ardika_k"
               target="_blank"
               rel="noopener noreferrer"
               className="group p-6 rounded-3xl glass-card hover:border-purple-500/50 transition-all duration-500"
@@ -34,7 +34,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/ketutardika/"
               target="_blank"
               rel="noopener noreferrer"
               className="group p-6 rounded-3xl glass-card hover:border-purple-500/50 transition-all duration-500"
@@ -54,7 +54,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/ketut-ardika/"
               target="_blank"
               rel="noopener noreferrer"
               className="group p-6 rounded-3xl glass-card hover:border-purple-500/50 transition-all duration-500"

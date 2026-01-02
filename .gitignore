@@ -37,6 +37,7 @@ next-env.d.ts
 
 # local documentation
 claude.md
+DEPLOYMENT.md
 sources/personal-portfolio.txt
 
 # claude code

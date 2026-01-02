@@ -32,7 +32,7 @@ export default function Hero() {
             </p>
             <div className="flex justify-center gap-4 pt-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/ketutardika/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white transition-all hover:scale-110"
@@ -51,7 +51,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="/resume.pdf"
+                href="#"
                 download
                 className="px-6 py-3 rounded-lg bg-white dark:bg-transparent border-2 border-purple-600 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white transition-all hover:scale-105 flex items-center gap-2"
               >
