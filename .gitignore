@@ -40,5 +40,6 @@ claude.md
 sources/personal-portfolio.txt
 
 # claude code
+/.claude/
 .claude/
 .claude/**
