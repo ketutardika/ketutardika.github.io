@@ -112,9 +112,3 @@ npm run build
 ## License
 
 All rights reserved © 2026 I Ketut Ardika
-
-## Contact
-
-- GitHub: [yourusername](https://github.com/yourusername)
-- LinkedIn: [yourusername](https://linkedin.com/in/yourusername)
-- Instagram: [@yourusername](https://instagram.com/yourusername)
