@@ -14,7 +14,7 @@ export default function Hero() {
             </h2>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
               I'm{' '}
-              <span className="gradient-text">I Ketut Ardika</span>
+              <span className="gradient-text">Ketut Ardika</span>
             </h1>
             <div className="text-2xl md:text-3xl font-semibold h-20 flex items-center justify-center">
               <TypeWriter
