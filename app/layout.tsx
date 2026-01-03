@@ -10,13 +10,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ketut Ardika - WordPress & E-commerce Developer",
-  description: "Senior WordPress & E-commerce Developer with 10+ years of experience. Specialized in custom WooCommerce architecture, trading platforms, and high-performance web solutions.",
+  title: "Ketut Ardika - Senior Wordpress Developer & Technical Lead",
+  description: "Senior Wordpress Developer & Technical Lead with 10+ years of experience. Specialized in custom WooCommerce architecture, trading platforms, and high-performance web solutions.",
   keywords: ["WordPress Developer", "Shopify Developer", "WooCommerce", "E-commerce", "Web Development", "Technical Lead"],
   authors: [{ name: "Ketut Ardika" }],
   openGraph: {
-    title: "Ketut Ardika - WordPress & E-commerce Developer",
-    description: "Senior WordPress & E-commerce Developer with 10+ years of experience",
+    title: "Ketut Ardika - Senior Wordpress Developer & Technical Lead",
+    description: "Senior Wordpress Developer & Technical Lead with 10+ years of experience",
     type: "website",
   },
 };

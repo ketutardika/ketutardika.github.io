@@ -21,14 +21,14 @@ export default function Hero() {
                 words={[
                   'WordPress Developer',
                   'Shopify Developer',
-                  'Technical Lead Engineer',
+                  'Technical Lead',
                 ]}
                 className="text-purple-600 dark:text-purple-400"
               />
             </div>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Where innovation meets artistry. We transform your vision into
-              powerful digital experiences that captivate and convert.
+              Building digital solutions with clean code and smart tech.
+              Let's turn your ideas into reality, one commit at a time.
             </p>
             <div className="flex justify-center gap-4 pt-4">
               <a
