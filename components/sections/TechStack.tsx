@@ -92,7 +92,7 @@ export default function TechStack() {
                 {category.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-sm rounded-full bg-purple-600/10 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white transition-colors cursor-default"
+                    className="px-3 py-1 text-sm rounded-full glass-card bg-transparent text-white dark:text-purple-400 hover:bg-purple-400 hover:text-white transition-colors cursor-default"
                   >
                     {tech}
                   </span>
