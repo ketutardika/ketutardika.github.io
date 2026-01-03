@@ -72,7 +72,7 @@ export default function TechStack() {
     <section id="tech-stack" className="py-24 section-glass">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 tracking-tight">
-          Tech <span className="gradient-text">Stack</span>
+          Technical <span className="gradient-text">Skills</span>
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">

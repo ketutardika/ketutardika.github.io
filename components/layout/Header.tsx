@@ -39,6 +39,16 @@ export default function Header() {
         <div className="flex items-center justify-center">
           <div className="hidden md:flex items-center gap-8">
             <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+              className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            >
+              Home
+            </a>
+            <a
               href="#about"
               onClick={(e) => {
                 e.preventDefault();
@@ -67,6 +77,26 @@ export default function Header() {
               className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
             >
               Experience
+            </a> */}
+            <a
+              href="#tech-stack"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('tech-stack');
+              }}
+              className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            >
+              Technical Skill
+            </a>
+            {/* <a
+              href="#education"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('education');
+              }}
+              className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            >
+              Education
             </a> */}
             <a
               href="#contact"
