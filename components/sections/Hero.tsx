@@ -52,6 +52,7 @@ export default function Hero() {
               </a>
               <a
                 href="https://docs.google.com/document/d/100S6gLwDhoro5o-iKr50814kg4jJ_AHfBzjZgk1Yeu0/edit?usp=sharing"
+                target="_blank"
                 className="px-6 py-3 rounded-lg bg-white dark:bg-transparent border-2 border-purple-600 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-purple-600 dark:hover:text-white transition-all hover:scale-105 flex items-center gap-2"
               >
                 <svg

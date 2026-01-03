@@ -7,16 +7,30 @@ export default function Contact() {
             <span className="gradient-text">Find Me On</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-            Looking for an experienced WordPress & E-commerce Developer to bring your
-            project to life? Whether it's building a custom WooCommerce solution,
-            integrating trading platforms, or scaling your e-commerce business.
+            Got an interesting project or just want to chat about tech?
+            I'm always up for collaboration and new opportunities.
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-12">
-            Let's discuss how I can help turn your vision into reality.
-            <span className="font-semibold text-purple-600 dark:text-purple-400"> Feel free to reach out!</span>
+            Drop me a message, and let's make something awesome together!
+            <span className="font-semibold text-purple-600 dark:text-purple-400"> I'd love to hear from you.</span>
           </p>
 
           <div className="flex justify-center gap-6">
+            <a
+              href="mailto:ardikadev@gmail.com"
+              className="group p-6 rounded-3xl glass-card hover:border-purple-500/50 transition-all duration-500"
+              aria-label="Email"
+            >
+              <svg
+                className="w-8 h-8 text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+
             <a
               href="https://instagram.com/ardika_k"
               target="_blank"

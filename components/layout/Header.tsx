@@ -56,9 +56,9 @@ export default function Header() {
               }}
               className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
             >
-              Services
+              Services & Experience
             </a>
-            <a
+            {/* <a
               href="#experience"
               onClick={(e) => {
                 e.preventDefault();
@@ -67,7 +67,7 @@ export default function Header() {
               className="text-sm font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
             >
               Experience
-            </a>
+            </a> */}
             <a
               href="#contact"
               onClick={(e) => {

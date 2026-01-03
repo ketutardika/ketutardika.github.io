@@ -24,31 +24,34 @@ export default function About() {
           {/* Right Side - Description */}
           <div className="space-y-6 animate-slide-in-right">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              A seasoned WordPress & E-commerce Developer bringing{' '}
+              Hey there! I'm a developer who's been playing around with WordPress and
+              e-commerce for{' '}
               <span className="font-semibold text-purple-600 dark:text-purple-400">
-                over a decade of expertise
-              </span>{' '}
-              in crafting, developing, and optimizing high-performance web solutions.
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              My core strengths lie in building{' '}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">
-                custom WooCommerce ecosystems
+                over 10 years now
               </span>
-              , implementing sophisticated checkout workflows, and seamlessly
-              integrating PropFirm and trading platforms.
+              . Yeah, I've built quite a few things along the way!
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I have a track record of delivering robust, scalable applications that
-              thrive in high-traffic scenarios, while successfully steering projects
-              for both emerging startups and well-established enterprises.
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              Currently advancing my expertise through a{' '}
+              I really enjoy building{' '}
               <span className="font-semibold text-purple-600 dark:text-purple-400">
-                Master's degree in Data Science
+                custom online stores
               </span>
-              , with specialized focus on forecasting techniques and predictive analytics.
+              , creating smooth checkout experiences, and connecting different platforms
+              together. Whether it's a WooCommerce site or integrating trading platforms,
+              I'm all about making things work seamlessly.
+            </p>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              I've worked with all kinds of projects—from scrappy startups to bigger
+              companies—and I love the challenge of building stuff that can handle
+              real-world traffic and actually helps businesses grow.
+            </p>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              These days, I'm also diving into{' '}
+              <span className="font-semibold text-purple-600 dark:text-purple-400">
+                Data Science
+              </span>
+              {' '}(working on my Master's degree!), learning about forecasting and
+              analytics. Because why not mix web dev with data, right?
             </p>
           </div>
         </div>

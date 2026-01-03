@@ -1,8 +1,8 @@
 export default function TechStack() {
   const techCategories = [
     {
-      category: 'Backend & Data',
-      technologies: ['PHP (Laravel)', 'Python', 'SQL'],
+      category: 'Backend & Performance',
+      technologies: ['PHP (Wordpress & Laravel)', 'Python', 'SQL', 'Cloudflare CDN', 'Database Optimization'],
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
@@ -33,21 +33,23 @@ export default function TechStack() {
       ),
     },
     {
-      category: 'Performance & DevOps',
+      category: 'Digital Marketing',
       technologies: [
-        'Cloudflare CDN',
-        'Database Optimization',
-        'CI/CD (GitHub Actions)',
+        'Google Analytics',
+        'Meta Pixel',
+        'Google Tag Manager',
+        'Marketing Automation',
       ],
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
         </svg>
       ),
     },
     {
       category: 'Data & Machine Learning',
-      technologies: ['Forecasting Models', 'Ensemble Methods (Academic Projects)'],
+      technologies: ['Data Mining', 'Web Scraping', 'Forecasting Models', 'Ensemble Methods'],
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -56,7 +58,7 @@ export default function TechStack() {
     },
     {
       category: 'Tools & Platforms',
-      technologies: ['GitHub', 'Postman', 'Visual Studio Code', 'Figma', 'Monday', 'Notion'],
+      technologies: ['GitHub', 'Postman', 'Figma', 'Spyder', 'R Studio', 'Orange Data Mining', 'Monday'],
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -92,7 +94,7 @@ export default function TechStack() {
                 {category.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-sm rounded-full glass-card bg-transparent text-white dark:text-purple-400 hover:bg-purple-400 hover:text-white transition-colors cursor-default"
+                    className="px-3 py-1 text-sm rounded-full glass-card bg-transparent text-white dark:text-white hover:bg-purple-600 hover:text-white cursor-default"
                   >
                     {tech}
                   </span>
