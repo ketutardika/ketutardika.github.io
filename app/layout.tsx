@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ketut Ardika - Senior Wordpress Engineer & Technical Lead",
+  title: "Ketut Ardika - Sr. Wordpress Engineer & Technical Lead",
   description: "Senior Wordpress Engineer & Technical Lead with 10+ years of experience. Specialized in custom WooCommerce architecture, trading platforms, and high-performance web solutions.",
   keywords: ["WordPress Engineer", "WordPress Developer", "Shopify Developer", "WooCommerce", "E-commerce", "Web Development", "Technical Lead"],
   authors: [{ name: "Ketut Ardika" }],
