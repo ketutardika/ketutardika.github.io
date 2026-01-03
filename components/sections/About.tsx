@@ -37,13 +37,13 @@ export default function About() {
                 custom online stores
               </span>
               , creating smooth checkout experiences, and connecting different platforms
-              together. Whether it's a WooCommerce site or integrating trading platforms,
+              together. Whether it's a WooCommerce site or integrating third-party platforms,
               I'm all about making things work seamlessly.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I've worked with all kinds of projects—from scrappy startups to bigger
-              companies—and I love the challenge of building stuff that can handle
-              real-world traffic and actually helps businesses grow.
+              I've worked with all kinds of projects from scrappy startups to bigger
+              companies and I love the challenge of building stuff that can handle
+              real world traffic and actually helps businesses grow.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               These days, I'm also diving into{' '}

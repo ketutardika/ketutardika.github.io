@@ -19,7 +19,7 @@ export default function Hero() {
             <div className="text-2xl md:text-3xl font-semibold h-20 flex items-center justify-center">
               <TypeWriter
                 words={[
-                  'WordPress Developer',
+                  'WordPress Engineer',
                   'Shopify Developer',
                   'Technical Lead',
                 ]}
