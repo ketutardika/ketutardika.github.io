@@ -38,7 +38,7 @@ export default function Hero() {
                     aboutSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-8 py-4 rounded-full border border-purple-500 hover:border-purple-800 transition-all group flex items-center gap-3"
+                className="px-8 py-4 rounded-3xl border border-purple-500 hover:border-purple-800 transition-all group flex items-center gap-3"
                 aria-label="Scroll to About section"
               >
                 <span className="text-base font-semibold text-gray-800 dark:text-gray-200">
