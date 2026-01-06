@@ -31,16 +31,16 @@ export default function Hero() {
               Building digital solutions with clean code and smart tech.
               Let's turn your ideas into reality, one commit at a time.
             </p>
-            <div className="flex justify-center items-center gap-4 pt-4">
+            <div className="flex justify-center items-center gap-2 md:gap-4 pt-4">
               <a
                 href="https://github.com/ketutardika/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group px-6 py-4 rounded-3xl border border-purple-500 hover:border-purple-500/50 transition-all duration-500 flex items-center gap-3"
+                className="group px-3 py-2 md:px-6 md:py-4 rounded-2xl md:rounded-3xl border border-purple-500 hover:border-purple-500/50 transition-all duration-500 flex items-center gap-2 md:gap-3"
                 aria-label="GitHub"
               >
                 <svg
-                  className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
+                  className="w-4 h-4 md:w-6 md:h-6 text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -50,7 +50,7 @@ export default function Hero() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                <span className="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   Explore Projects
                 </span>
               </a>
@@ -61,14 +61,14 @@ export default function Hero() {
                     aboutSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-8 py-4 rounded-3xl border border-purple-500 hover:border-purple-800 transition-all group flex items-center gap-3"
+                className="px-4 py-2 md:px-8 md:py-4 rounded-2xl md:rounded-3xl border border-purple-500 hover:border-purple-800 transition-all group flex items-center gap-2 md:gap-3"
                 aria-label="Scroll to About section"
               >
-                <span className="text-base font-semibold text-gray-800 dark:text-gray-200">
+                <span className="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">
                   See What I Do
                 </span>
                 <svg
-                  className="w-5 h-5 text-purple-600 dark:text-purple-400 animate-bounce group-hover:translate-y-1 transition-transform"
+                  className="w-4 h-4 md:w-5 md:h-5 text-purple-600 dark:text-purple-400 animate-bounce group-hover:translate-y-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
