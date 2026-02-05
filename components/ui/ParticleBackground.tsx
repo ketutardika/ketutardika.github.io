@@ -14,128 +14,198 @@ export default function ParticleBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let centerX = width / 2;
+    let centerY = height / 2;
+
     // Set canvas size
     const setCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      centerX = width / 2;
+      centerY = height / 2;
+      canvas.width = width;
+      canvas.height = height;
     };
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
 
-    // Particle class
-    class Particle {
+    // 3D Perspective settings
+    const focalLength = 300;
+    const maxDepth = 1500;
+
+    // Particle class with 3D coordinates
+    class Particle3D {
       x: number;
       y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      opacity: number;
+      z: number;
+      prevX: number;
+      prevY: number;
+      speed: number;
+      color: string;
 
       constructor() {
-        this.x = Math.random() * (canvas?.width || 0);
-        this.y = Math.random() * (canvas?.height || 0);
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.x = (Math.random() - 0.5) * width * 2;
+        this.y = (Math.random() - 0.5) * height * 2;
+        this.z = Math.random() * maxDepth;
+        this.prevX = 0;
+        this.prevY = 0;
+        this.speed = Math.random() * 2 + 1;
+
+        // Particle colors
+        const colors = theme === 'dark'
+          ? [
+              '147, 51, 234',   // Purple
+              '168, 85, 247',   // Light purple
+              '139, 92, 246',   // Violet
+              '99, 102, 241',   // Indigo
+              '59, 130, 246',   // Blue
+            ]
+          : [
+              '147, 51, 234',   // Purple
+              '168, 85, 247',   // Light purple
+              '124, 58, 237',   // Violet
+              '79, 70, 229',    // Indigo
+              '99, 102, 241',   // Blue
+            ];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      // Project 3D coordinates to 2D screen
+      project(): { x: number; y: number; scale: number } | null {
+        if (this.z <= 0) return null;
+
+        const scale = focalLength / this.z;
+        const x2d = this.x * scale + centerX;
+        const y2d = this.y * scale + centerY;
+
+        return { x: x2d, y: y2d, scale };
       }
 
       update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+        // Store previous projected position for trail
+        const prevProjection = this.project();
+        if (prevProjection) {
+          this.prevX = prevProjection.x;
+          this.prevY = prevProjection.y;
+        }
 
-        // Wrap around edges
-        if (canvas) {
-          if (this.x > canvas.width) this.x = 0;
-          if (this.x < 0) this.x = canvas.width;
-          if (this.y > canvas.height) this.y = 0;
-          if (this.y < 0) this.y = canvas.height;
+        // Move particle towards viewer
+        this.z -= this.speed * 3;
+
+        // Reset particle when it passes the viewer
+        if (this.z <= 1) {
+          this.x = (Math.random() - 0.5) * width * 2;
+          this.y = (Math.random() - 0.5) * height * 2;
+          this.z = maxDepth;
+          this.prevX = 0;
+          this.prevY = 0;
         }
       }
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = theme === 'dark'
-          ? `rgba(147, 51, 234, ${this.opacity})` // Purple for dark theme
-          : `rgba(168, 85, 247, ${this.opacity})`; // Lighter purple for light theme
+
+        const projection = this.project();
+        if (!projection) return;
+
+        const { x, y, scale } = projection;
+
+        // Skip if outside canvas
+        if (x < -50 || x > width + 50 || y < -50 || y > height + 50) return;
+
+        // Calculate opacity based on depth
+        const opacity = Math.min(1, (1 - this.z / maxDepth) * 1.5);
+        const size = Math.max(0.5, scale * 2);
+
+        // Draw trail line
+        if (this.prevX !== 0 && this.prevY !== 0) {
+          const trailLength = Math.sqrt(
+            Math.pow(x - this.prevX, 2) + Math.pow(y - this.prevY, 2)
+          );
+
+          if (trailLength > 1 && trailLength < 100) {
+            const gradient = ctx.createLinearGradient(this.prevX, this.prevY, x, y);
+            gradient.addColorStop(0, `rgba(${this.color}, 0)`);
+            gradient.addColorStop(1, `rgba(${this.color}, ${opacity * 0.8})`);
+
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = size * 0.5;
+            ctx.beginPath();
+            ctx.moveTo(this.prevX, this.prevY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+          }
+        }
+
+        // Draw particle with glow
+        const glowSize = size * 3;
+        const glowGradient = ctx.createRadialGradient(x, y, 0, x, y, glowSize);
+        glowGradient.addColorStop(0, `rgba(${this.color}, ${opacity})`);
+        glowGradient.addColorStop(0.4, `rgba(${this.color}, ${opacity * 0.3})`);
+        glowGradient.addColorStop(1, `rgba(${this.color}, 0)`);
+
+        ctx.fillStyle = glowGradient;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(x, y, glowSize, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw particle core
+        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.beginPath();
+        ctx.arc(x, y, size * 0.5, 0, Math.PI * 2);
         ctx.fill();
       }
     }
 
     // Create particles
-    const particleCount = 100;
-    const particles: Particle[] = [];
+    const particleCount = 200;
+    const particles: Particle3D[] = [];
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
+      particles.push(new Particle3D());
     }
 
-    // Mouse interaction
-    let mouse = { x: 0, y: 0, radius: 150 };
+    // Mouse interaction for parallax effect
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetOffsetX = 0;
+    let targetOffsetY = 0;
+    let currentOffsetX = 0;
+    let currentOffsetY = 0;
 
     canvas.addEventListener('mousemove', (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
+      mouseX = (e.clientX - centerX) / centerX;
+      mouseY = (e.clientY - centerY) / centerY;
+      targetOffsetX = mouseX * 50;
+      targetOffsetY = mouseY * 50;
     });
 
     canvas.addEventListener('mouseleave', () => {
-      mouse.x = 0;
-      mouse.y = 0;
+      targetOffsetX = 0;
+      targetOffsetY = 0;
     });
-
-    // Connect particles
-    const connectParticles = () => {
-      if (!ctx) return;
-      const maxDistance = 120;
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < maxDistance) {
-            const opacity = (1 - distance / maxDistance) * 0.3;
-            ctx.strokeStyle = theme === 'dark'
-              ? `rgba(147, 51, 234, ${opacity})`
-              : `rgba(168, 85, 247, ${opacity})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-
-        // Connect to mouse
-        if (mouse.x !== 0 && mouse.y !== 0) {
-          const dx = particles[i].x - mouse.x;
-          const dy = particles[i].y - mouse.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < mouse.radius) {
-            const opacity = (1 - distance / mouse.radius) * 0.5;
-            ctx.strokeStyle = theme === 'dark'
-              ? `rgba(147, 51, 234, ${opacity})`
-              : `rgba(168, 85, 247, ${opacity})`;
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-          }
-        }
-      }
-    };
 
     // Animation loop
     const animate = () => {
       if (!ctx) return;
 
-      // Clear canvas with theme-aware background
-      ctx.fillStyle = theme === 'dark' ? '#0a0a0a' : '#ffffff';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Smooth mouse parallax
+      currentOffsetX += (targetOffsetX - currentOffsetX) * 0.05;
+      currentOffsetY += (targetOffsetY - currentOffsetY) * 0.05;
+
+      // Update center based on mouse
+      centerX = width / 2 + currentOffsetX;
+      centerY = height / 2 + currentOffsetY;
+
+      // Clear canvas with fade effect for motion blur
+      ctx.fillStyle = theme === 'dark'
+        ? 'rgba(10, 10, 10, 0.2)'
+        : 'rgba(255, 255, 255, 0.2)';
+      ctx.fillRect(0, 0, width, height);
+
+      // Sort particles by depth (far to near)
+      particles.sort((a, b) => b.z - a.z);
 
       // Update and draw particles
       particles.forEach((particle) => {
@@ -143,9 +213,12 @@ export default function ParticleBackground() {
         particle.draw();
       });
 
-      connectParticles();
       requestAnimationFrame(animate);
     };
+
+    // Initial clear
+    ctx.fillStyle = theme === 'dark' ? '#0a0a0a' : '#ffffff';
+    ctx.fillRect(0, 0, width, height);
 
     animate();
 
